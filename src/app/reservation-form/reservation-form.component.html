@@ -1,7 +1,9 @@
+<app-home></app-home>
+
 <form [formGroup]="reservationForm" (ngSubmit)="onSubmit()">
-  <div>
+  <div class="mb-3">
     <label>Check in Date:</label>
-    <input type="date" formControlName="checkInData" />
+    <input type="date" formControlName="checkInData" class="form-control" />
     <div
       *ngIf="
         reservationForm.get('checkInData')?.invalid &&
@@ -12,9 +14,9 @@
     </div>
   </div>
 
-  <div>
+  <div class="mb-3">
     <label>Check out Date:</label>
-    <input type="date" formControlName="checkOutData" />
+    <input type="date" formControlName="checkOutData" class="form-control" />
     <div
       *ngIf="
         reservationForm.get('checkOutData')?.invalid &&
@@ -25,9 +27,9 @@
     </div>
   </div>
 
-  <div>
+  <div class="mb-3">
     <label>Guest Name:</label>
-    <input type="text" formControlName="guestName" />
+    <input type="text" formControlName="guestName" class="form-control" />
     <div
       *ngIf="
         reservationForm.get('guestName')?.invalid &&
@@ -38,9 +40,9 @@
     </div>
   </div>
 
-  <div>
+  <div class="mb-3">
     <label>Email:</label>
-    <input type="email" formControlName="guestEmail" />
+    <input type="email" formControlName="guestEmail" class="form-control" />
     <div
       *ngIf="
         reservationForm.get('guestEmail')?.invalid &&
@@ -51,9 +53,9 @@
     </div>
   </div>
 
-  <div>
+  <div class="mb-3">
     <label>Room Number</label>
-    <input type="number" formControlName="roomNumber" />
+    <input type="number" formControlName="roomNumber" class="form-control" />
     <div
       *ngIf="
         reservationForm.get('roomNumber')?.invalid &&
@@ -64,5 +66,11 @@
     </div>
   </div>
 
-  <button type="submit" [disabled]="reservationForm.invalid">Submit</button>
+  <button
+    class="btn btn-primary"
+    type="submit"
+    [disabled]="reservationForm.invalid"
+  >
+    Submit
+  </button>
 </form>
